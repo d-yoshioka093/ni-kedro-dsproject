@@ -6,6 +6,21 @@ This kedro project for internal study, which was generated using `Kedro 0.18.7`.
 
 Take a look at the [Kedro documentation](https://kedro.readthedocs.io) to get started.
 
+## Environments
+
+```
+conda create --name kedro-environment python=3.10 -y
+pip install kedro
+```
+環境構築は上記コマンドを実行し、python仮想環境とkedroをインストール
+
+```
+kedro new --starter=pyspark
+git init
+```
+kedro starterを利用して、プロジェクト構成をインストールする方法（git clone時は不要）
+
+
 ## Rules and guidelines
 
 In order to get the best out of the template:
