@@ -48,3 +48,4 @@ tomli==2.0.1
 toposort==1.10
 urllib3==1.26.15
 zipp==3.15.0
+pyspark==3.4.0

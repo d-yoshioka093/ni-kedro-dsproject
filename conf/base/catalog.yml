@@ -9,3 +9,28 @@
 # (transcoding), templating and a way to reuse arguments that are frequently repeated. See more here:
 # https://kedro.readthedocs.io/en/stable/data/data_catalog.html
 #
+# raw_boat_data:
+#     type: "${datasets.spark}"  # nested paths into global dict are allowed
+#     filepath: "s3a://${bucket_name}/${key_prefix}/${folders.raw}/boats.csv"
+#     file_format: parquet
+
+# raw_car_data:
+#     type: "${datasets.csv}"
+#     filepath: "s3://${bucket_name}/data/${key_prefix}/${folders.raw}/${filename|cars.csv}"  # default to 'cars.csv' if the 'filename' key is not found in the global dict
+
+_csv: &csv
+    type: pandas.CSVDataSet
+    # file_format: csv
+    # load_args:
+    # sep: ','
+    # na_values: ['#NA', NA]
+    # header: True
+    # inferSchema: False
+
+hoge:
+    <<: *csv
+    filepath: data/01_raw/train.csv
+
+greeting_message:
+    <<: *csv
+    filepath: data/01_raw/result.csv
