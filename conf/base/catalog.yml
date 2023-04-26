@@ -27,10 +27,10 @@ _csv: &csv
     # header: True
     # inferSchema: False
 
-hoge:
+train:
     <<: *csv
     filepath: data/01_raw/train.csv
 
-greeting_message:
+result:
     <<: *csv
-    filepath: data/01_raw/result.csv
+    filepath: data\01_raw\result.csv
