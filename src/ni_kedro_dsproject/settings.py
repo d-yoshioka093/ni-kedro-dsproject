@@ -3,9 +3,10 @@ from the Kedro defaults. For further information, including these default values
 https://kedro.readthedocs.io/en/stable/kedro_project_setup/settings.html."""
 
 # Instantiated project hooks.
-from ni_kedro_dsproject.hooks import SparkHooks
+from ni_kedro_dsproject.hooks import SparkHooks, DataCatalogHooks
 
-HOOKS = (SparkHooks(),)
+HOOKS = (DataCatalogHooks(), SparkHooks())
+
 
 # Installed plugins for which to disable hook auto-registration.
 # DISABLE_HOOKS_FOR_PLUGINS = ("kedro-viz",)
