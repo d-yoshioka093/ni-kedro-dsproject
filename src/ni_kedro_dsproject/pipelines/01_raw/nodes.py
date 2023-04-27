@@ -1,10 +1,20 @@
-def hello_world(name: str) -> str:
-    """Return a "Hello, {name}!" message.
+from pyspark.sql import SparkSession,DataFrame
+
+def sample_node(train :DataFrame): #-> DataFrame:
+    """Return dataframe.
 
     Args:
-        name: A name to greet.
+        Nothing.
 
     Returns:
-        A greeting message.
+        sample pyspark dataframe.
     """
-    return f"Hello, {name}!"
+    
+    # spark = SparkSession.builder.appName("hoge_dataframe").getOrCreate()
+    # data = [("Alice", 1), ("Bob", 2), ("Charlie", 3), ("Dave", 4)]
+    # df = spark.createDataFrame(data, ["Name", "Age"])
+
+    print(type(train))
+
+    print("end")
+    # return df

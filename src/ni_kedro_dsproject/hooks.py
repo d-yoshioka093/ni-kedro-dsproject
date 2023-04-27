@@ -1,7 +1,17 @@
 from kedro.framework.hooks import hook_impl
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
+import logging
+from kedro.io import DataCatalog
 
+class DataCatalogHooks:
+    def __init__(self):
+        self._logger = logging.getLogger(self.__class__.__name__)
+        self._logger.info("DataCatalogHooks initialized")
+
+    @hook_impl
+    def after_catalog_created(self, catalog: DataCatalog) -> None:
+        self._logger.info(catalog.list())
 
 class SparkHooks:
     @hook_impl
@@ -22,3 +32,6 @@ class SparkHooks:
         )
         _spark_session = spark_session_conf.getOrCreate()
         _spark_session.sparkContext.setLogLevel("WARN")
+
+
+

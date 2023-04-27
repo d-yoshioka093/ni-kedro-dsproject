@@ -27,10 +27,18 @@ _csv: &csv
     # header: True
     # inferSchema: False
 
-hoge:
-    <<: *csv
+train:
+    type: kedro.extras.datasets.spark.SparkDataSet
     filepath: data/01_raw/train.csv
+    file_format: csv
+    load_args:
+        header: true
+        inferSchema: true
+    save_args:
+        header: true
+        mode: overwrite
 
-greeting_message:
+
+result:
     <<: *csv
-    filepath: data/01_raw/result.csv
+    filepath: data\01_raw\result.csv
