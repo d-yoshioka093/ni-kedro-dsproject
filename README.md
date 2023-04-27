@@ -20,6 +20,10 @@ git init
 ```
 kedro starterを利用して、プロジェクト構成をインストールする方法（git clone時は不要）
 
+```
+set JAVA_HOME=javaのインストールパス
+```
+システム環境変数にjavaのインストールパスを追加
 
 ## Rules and guidelines
 
