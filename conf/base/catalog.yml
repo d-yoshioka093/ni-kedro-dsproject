@@ -39,6 +39,13 @@ train:
         mode: overwrite
 
 
+# result:
+#     <<: *csv
+#     filepath: data\01_raw\result.csv
+
 result:
-    <<: *csv
-    filepath: data\01_raw\result.csv
+  # type: pickle.PickleDataSet
+  # filepath: data/01_raw/train.pkl
+  # backend: pickle
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/train.csv
