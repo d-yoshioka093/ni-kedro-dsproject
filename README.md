@@ -31,7 +31,7 @@ set JAVA_HOME=javaのインストールパス
 ```
 ERROR: Write access to repository not granted.
 ```
-上記エラーが発生した場合
+push実行時に上記エラーが発生した場合
 リポジトリの管理者に自身のアカウントに対して、collaboratorsとしての権限を付与してもらう
 
 ## Rules and guidelines
