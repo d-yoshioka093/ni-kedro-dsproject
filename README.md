@@ -20,10 +20,19 @@ git init
 ```
 kedro starterを利用して、プロジェクト構成をインストールする方法（git clone時は不要）
 
+JDKをダウンロード
+https://www.oracle.com/java/technologies/downloads/
 ```
 set JAVA_HOME=javaのインストールパス
 ```
-システム環境変数にjavaのインストールパスを追加
+システム環境変数にインストールしたJAVAのパスを追加
+（変数値例）C:\Program Files\Java\jdk-17.0.2
+
+```
+ERROR: Write access to repository not granted.
+```
+上記エラーが発生した場合
+リポジトリの管理者に自身のアカウントに対して、collaboratorsとしての権限を付与してもらう
 
 ## Rules and guidelines
 
