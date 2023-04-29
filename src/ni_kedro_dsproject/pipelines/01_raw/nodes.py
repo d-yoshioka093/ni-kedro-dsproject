@@ -1,18 +1,14 @@
-from pyspark.sql import SparkSession,DataFrame
+from pyspark.sql import DataFrame
+from ni_kedro_dsproject.hooks import SparkHooks
 
-def sample_node(train :DataFrame) -> DataFrame:
+def sample_node(train: DataFrame) -> DataFrame:
     """Return dataframe.
 
     Args:
-        Nothing.
+        train: A Spark DataFrame.
 
     Returns:
-        sample pyspark dataframe.
+        A sample PySpark DataFrame.
     """
-    
-    spark = SparkSession.builder.appName("hoge_dataframe").getOrCreate()
-    data = [("Alice", 1), ("Bob", 2), ("Charlie", 3), ("Dave", 4)]
-    df = spark.createDataFrame(data, ["Name", "Age"])
-    # print(df.show())
-
-    return df.toPandas()
+    print(type(train))
+    return train

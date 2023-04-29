@@ -13,7 +13,7 @@ def create_pipeline(**kwargs):
             node(
                 func=sample_node,
                 inputs="train",
-                outputs="result",
+                outputs="result@pyspark",
                 name="sample_node",
             ),
         ]
