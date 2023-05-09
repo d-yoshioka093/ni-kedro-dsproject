@@ -1,18 +1,27 @@
-from pyspark.sql import SparkSession,DataFrame
+from pyspark.sql import DataFrame
 
-def sample_node(train :DataFrame) -> DataFrame:
+import logging.config
+from kedro.config import ConfigLoader
+from kedro.framework.project import settings
+
+def sample_node(train: DataFrame, params: dict) -> DataFrame:
     """Return dataframe.
 
     Args:
-        Nothing.
+        train: A Spark DataFrame.
 
     Returns:
-        sample pyspark dataframe.
+        A sample PySpark DataFrame.
     """
-    
-    spark = SparkSession.builder.appName("hoge_dataframe").getOrCreate()
-    data = [("Alice", 1), ("Bob", 2), ("Charlie", 3), ("Dave", 4)]
-    df = spark.createDataFrame(data, ["Name", "Age"])
-    # print(df.show())
 
-    return df.toPandas()
+    # project_path = "C:\notebook\01_study\ni-kedro-dsproject\src"
+    # conf_path = str(project_path / settings.CONF_SOURCE)
+    # conf_loader = ConfigLoader(conf_source=conf_path, env="local")
+
+    # # conf_logging = conf_loader["logging"]
+    # # logging.config.dictConfig(conf_logging)  # set logging conf
+    # print(conf_loader)
+
+    print(params)
+    print(type(train))
+    return train
