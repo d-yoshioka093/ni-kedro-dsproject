@@ -3,6 +3,7 @@ from pyspark import SparkConf
 from pyspark.sql import SparkSession
 import logging
 from kedro.io import DataCatalog
+from kedro.framework.hooks import hook_impl
 
 class DataCatalogHooks:
     def __init__(self):
@@ -32,6 +33,3 @@ class SparkHooks:
         )
         _spark_session = spark_session_conf.getOrCreate()
         _spark_session.sparkContext.setLogLevel("WARN")
-
-
-

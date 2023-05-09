@@ -38,7 +38,8 @@ _csv: &csv
 
 train:
   type: spark.SparkDataSet
-  filepath: data/01_raw/train.csv
+  # filepath: data/01_raw/train.csv
+  filepath: ${data_path}/01_raw/train.csv
   file_format: csv
   load_args:
     header: True
@@ -50,7 +51,8 @@ train:
 
 result@pyspark:
   type: spark.SparkDataSet
-  filepath: data/02_intermediate/result.parquet
+  # filepath: data/02_intermediate/result.parquet
+  filepath: ${data_path}/02_intermediate/result.parquet
   save_args:
     mode: overwrite
 
