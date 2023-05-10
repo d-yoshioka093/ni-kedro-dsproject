@@ -26,49 +26,10 @@ _csv: &csv
     header: True
     inferSchema: False
 
-# train:
-#     filepath: data/01_raw/train.csv
-#     type: pandas.CSVDataSet
-#     load_args:
-#         header: "infer"
-#     save_args:
-#         header: true
-#         mode: overwrite
-#     # <<: *csv
-
-train:
-  type: spark.SparkDataSet
-  # filepath: data/01_raw/train.csv
-  filepath: ${data_path}/${folders.raw}/train.csv
-  file_format: csv
-  load_args:
-    header: True
-    inferSchema: True
-  save_args:
-    sep: ','
-    header: True
-
-result@pyspark:
+result2@pyspark:
   type: spark.SparkDataSet
   # filepath: data/02_intermediate/result.parquet
-  filepath: ${data_path}/${folders.int}/result.parquet
+  filepath: ${data_path}/${folders.pri}/result2.parquet
   save_args:
     mode: overwrite
 
-# result:
-#     <<: *csv
-#     filepath: data\01_raw\result.csv
-
-# result:
-#   # type: pickle.PickleDataSet
-#   # filepath: data/01_raw/train.pkl
-#   # backend: pickle
-#     type: kedro.extras.datasets.spark.SparkDataSet
-#     filepath: data/01_raw/result.csv
-#     file_format: csv
-#     load_args:
-#         header: true
-#         inferSchema: true
-#     save_args:
-#         header: true
-#         mode: overwrite
