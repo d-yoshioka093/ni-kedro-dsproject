@@ -22,3 +22,6 @@ spark.master: "local[2]"
 
 # Sparkの実行モード
 spark.submit.deployMode: "client"
+
+# Sparkドライバプログラムが受け取る最大結果サイズ(デフォルト1GB)
+# spark.driver.maxResultSize: 

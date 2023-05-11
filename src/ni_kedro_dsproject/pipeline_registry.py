@@ -1,9 +1,9 @@
 # """Project pipelines."""
 from typing import Dict
-
 from kedro.framework.project import find_pipelines
 from kedro.pipeline import Pipeline
-
+from ni_kedro_dsproject.pipelines.nkd_01_raw.pipeline import create_pipeline as create_pipeline_01_raw
+from ni_kedro_dsproject.pipelines.nkd_02_int.pipeline import create_pipeline as create_pipeline_02_int
 
 # def register_pipelines() -> Dict[str, Pipeline]:
 #     """Register the project's pipelines.
@@ -14,9 +14,6 @@ from kedro.pipeline import Pipeline
 #     pipelines = find_pipelines()
 #     pipelines["__default__"] = sum(pipelines.values())
 #     return pipelines
-
-from ni_kedro_dsproject.pipelines.nkd_01_raw.pipeline import create_pipeline as create_pipeline_01_raw
-from ni_kedro_dsproject.pipelines.nkd_02_int.pipeline import create_pipeline as create_pipeline_02_int
 
 def register_pipelines() -> Dict[str, Pipeline]:
     """Register the project's pipelines.

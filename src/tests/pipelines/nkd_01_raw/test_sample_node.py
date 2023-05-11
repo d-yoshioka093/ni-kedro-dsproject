@@ -4,8 +4,7 @@ from pyspark.sql import Row
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from ..nodes import sample_node
-
+from ni_kedro_dsproject.pipelines.nkd_01_raw.nodes import sample_node
 
 @pytest.fixture(scope="module")
 def spark_session():
