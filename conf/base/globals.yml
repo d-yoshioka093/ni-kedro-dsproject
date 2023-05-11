@@ -10,5 +10,3 @@ folders:
     int: "02_intermediate"
     pri: "03_primary"
     fea: "04_feature"
-
-# data_path: data
