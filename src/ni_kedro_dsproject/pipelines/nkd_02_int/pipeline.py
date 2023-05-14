@@ -11,10 +11,10 @@ def create_pipeline(**kwargs):
     return Pipeline(
         [
             node(
-                func=sample_node2,
-                inputs=["train", "parameters"],
+                func=int_sample_node2,
+                inputs=["result"],
                 outputs="result2@pyspark",
-                name="sample_node2",
+                name="int_sample_node2",
             ),
         ]
     )
