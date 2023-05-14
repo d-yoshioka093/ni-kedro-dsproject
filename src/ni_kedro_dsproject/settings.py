@@ -3,9 +3,10 @@ from the Kedro defaults. For further information, including these default values
 https://kedro.readthedocs.io/en/stable/kedro_project_setup/settings.html."""
 
 # Instantiated project hooks.
-from ni_kedro_dsproject.hooks import SparkHooks
+from ni_kedro_dsproject.hooks import SparkHooks, DataCatalogHooks
 
-HOOKS = (SparkHooks(),)
+HOOKS = (DataCatalogHooks(), SparkHooks())
+
 
 # Installed plugins for which to disable hook auto-registration.
 # DISABLE_HOOKS_FOR_PLUGINS = ("kedro-viz",)
@@ -28,11 +29,21 @@ HOOKS = (SparkHooks(),)
 # Class that manages how configuration is loaded.
 # Template configuration
 from kedro.config import TemplatedConfigLoader
+
 CONFIG_LOADER_CLASS = TemplatedConfigLoader
 # Keyword arguments to pass to the `CONFIG_LOADER_CLASS` constructor.
+CONFIG_LOADER_ARGS = {
+    "globals_pattern": "*globals.yml",
+}
+# 試行錯誤
+# from ni_kedro_dsproject.custom_config_loader import MultiPatternTemplatedConfigLoader
+
+# CONFIG_LOADER_CLASS = MultiPatternTemplatedConfigLoader
 # CONFIG_LOADER_ARGS = {
-#     "globals_pattern": "*globals.yml",
+#     "conf_paths": ["conf/base", "conf/local"],
+#     "globals_patterns": ["*globals.yml", "*local.yml"],
 # }
+
 
 # Class that manages the Data Catalog.
 # from kedro.io import DataCatalog

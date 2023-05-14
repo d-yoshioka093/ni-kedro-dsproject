@@ -9,6 +9,7 @@ formatters:
 handlers:
   console:
     class: logging.StreamHandler
+    # level: DEBUG
     level: INFO
     formatter: simple
     stream: ext://sys.stdout
@@ -38,10 +39,16 @@ handlers:
 
 loggers:
   kedro:
+    # level: DEBUG
     level: INFO
+    handlers: [console]
+    propagate: false
 
   ni_kedro_dsproject:
     level: INFO
+    handlers: [console, info_file_handler, error_file_handler]  # handlers を追加
+    propagate: false
 
 root:
-  handlers: [rich, info_file_handler, error_file_handler]
+  level: INFO
+  handlers: [console, rich, info_file_handler, error_file_handler]

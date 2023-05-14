@@ -19,18 +19,17 @@
 #     filepath: "s3://${bucket_name}/data/${key_prefix}/${folders.raw}/${filename|cars.csv}"  # default to 'cars.csv' if the 'filename' key is not found in the global dict
 
 _csv: &csv
-    type: pandas.CSVDataSet
-    # file_format: csv
-    # load_args:
-    # sep: ','
-    # na_values: ['#NA', NA]
-    # header: True
-    # inferSchema: False
+  type: spark.SparkDataSet
+  file_format: csv
+  load_args:
+    sep: ','
+    header: True
+    inferSchema: False
 
-hoge:
-    <<: *csv
-    filepath: data/01_raw/train.csv
+result2@pyspark:
+  type: spark.SparkDataSet
+  # filepath: data/02_intermediate/result.parquet
+  filepath: ${data_path}/${folders.pri}/result2.parquet
+  save_args:
+    mode: overwrite
 
-greeting_message:
-    <<: *csv
-    filepath: data/01_raw/result.csv
