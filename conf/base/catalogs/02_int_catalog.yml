@@ -26,7 +26,7 @@ _csv: &csv
     header: True
     inferSchema: False
 
-result2@pyspark:
+result2:
   type: spark.SparkDataSet
   # filepath: data/02_intermediate/result.parquet
   filepath: ${data_path}/${folders.pri}/result2.parquet
