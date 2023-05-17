@@ -4,28 +4,28 @@ from kedro.framework.project import settings
 
 from pyspark.ml.feature import StringIndexer
 
-def int_node_type(result_int: DataFrame) -> DataFrame:
+def int_node_type(int_result: DataFrame) -> DataFrame:
     """Return dataframe. Define data type.
 
     Args:
-        result_int: A Spark DataFrame. Output from int_node_na.
+        int_result: A Spark DataFrame. Slightly processed raw data.
 
     Returns:
-        A PySpark DataFrame.
+        A PySpark DataFrame.  Data with type definition.
     """
 
     #性別(Sex)と乗船港(Embarked)の型を数値に変換
     SexIndexer = StringIndexer(inputCol='Sex', outputCol='IndexSex')
-    SexIndexer = SexIndexer.fit(result_int)
+    SexIndexer = SexIndexer.fit(int_result)
 
-    result_int = SexIndexer.transform(result_int)
-    result_int = result_int.drop('Sex')
+    int_result = SexIndexer.transform(int_result)
+    int_result = int_result.drop('Sex')
 
     EmbarkedIndexer = StringIndexer(inputCol='Embarked', outputCol='IndexEmbarked')
-    EmbarkedIndexer = EmbarkedIndexer.fit(result_int)
+    EmbarkedIndexer = EmbarkedIndexer.fit(int_result)
 
-    result_int = EmbarkedIndexer.transform(result_int)
-    result_int = result_int.drop('Embarked')
+    int_result = EmbarkedIndexer.transform(int_result)
+    int_result = int_result.drop('Embarked')
 
 
-    return result_int
+    return int_result

@@ -55,7 +55,7 @@ result:
   save_args:
     mode: overwrite
 
-result_int:
+int_result:
   type: spark.SparkDataSet
   # filepath: data/02_intermediate/result.parquet
   filepath: ${data_path}/${folders.int}/result_int.parquet

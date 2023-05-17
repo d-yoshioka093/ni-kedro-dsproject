@@ -12,14 +12,14 @@ def create_pipeline(**kwargs):
     return Pipeline(
         [
             node(
-                func=int_node_na,
-                inputs=["result"],
-                outputs="result_int",
+                func=int_node_fillna,
+                inputs=["result", "parameters"],
+                outputs="int_result",
                 name="int_node_na",
             ),
             node(
                 func=int_node_type,
-                inputs=["result_int"],
+                inputs=["int_result"],
                 outputs="result2",
                 name="int_node_type",
             ),
