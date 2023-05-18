@@ -15,7 +15,7 @@ def int_node_fillna(result: DataFrame, params: dict) -> DataFrame:
     """
 
     #String型の欠損値を適当な文字列で置き換える
-    result = result.na.fill(params["Replace_na_with_strings"])
+    result = result.na.fill(params["Replace_na"])
 
     #年齢(Age)の欠損値を平均に置き換える
     stats = result.agg(F.avg('Age').alias('Age'))
