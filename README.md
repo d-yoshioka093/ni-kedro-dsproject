@@ -3,7 +3,7 @@
 ## Overview
 
 これは、`Kedro 0.18.7`を使用して生成された、新しいKedroプロジェクトです。
-プロジェクトのアーキテクチャーとして、pysparkを使用してirisの予測タスクを実行します。
+プロジェクトのアーキテクチャーとして、pysparkを使用してtitanicの予測タスクを実行します。
 
 詳細情報、基本的なアーキテクチャーの情報については、[Kedroドキュメント](https://kedro.readthedocs.io)を参照してください。
 
@@ -26,7 +26,7 @@
 conda create --name kedro-environment python=3.10
 ```
 
-`pip` をインストールする場合は `src/requirements.txt`で、~~ `conda` をインストールする場合は `src/environment.yml` で~~、依存関係を宣言してください。
+`pip` をインストールする場合は `src/requirements.txt`で、~~`conda` をインストールする場合は `src/environment.yml` で~~、依存関係を宣言してください。
 `pip`インストール:
 ```
 pip install -r src/requirements.txt
@@ -46,7 +46,10 @@ kedroプロジェクト実行:
 kedro run
 ```
 
-kedro run時のログ出力設定については、debugレベルまで出力するように定義しています。より簡易なログレベルに変更したい場合、`conf\base\logging.yml`の`#log level変更`部分を`INFO`に変更してください。
+kedro run 実行時のログ情報については以下を参考にして設定値を定めてください。
+conf\base\logging.ymlのlog level
+- シンプルな出力に変更したい場合、`conf\base\logging.yml`の`#log level変更`部分を`INFO`に変更してください。
+- 詳細なエラー情報を出力したい場合、`conf\base\logging.yml`の`#log level変更`部分を`DEBUG`に変更してください。
 
 ## How to test your Kedro project
 
@@ -65,9 +68,10 @@ coverage thresholdを設定するには、`.coveragerc` ファイルにアクセ
 ### 命名規則  
 ・スネークケース（小文字のみで、単語間をアンダースコアで区切ります。）  
 ・使用目的を考慮し、わかりやすい名前を付けます。  
+・レイヤーごとにプレフィックスを付けます。（例）int_
 ``` 
-delete_file 
-user_id 
+ファイルを削除する関数
+def int_deleate_file(~):
 ```
   
 ### インデント  
