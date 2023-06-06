@@ -69,7 +69,8 @@ coverage thresholdを設定するには、`.coveragerc` ファイルにアクセ
 ### 命名規則  
 ・スネークケース（小文字のみで、単語間をアンダースコアで区切ります。）  
 ・使用目的を考慮し、わかりやすい名前を付けます。  
-・レイヤーごとにプレフィックスを付けます。（例）int_
+・レイヤーごとにプレフィックスを付けます。（例）int_ (その他の例は[globals.yml](https://github.com/d-yoshioka093/ni-kedro-dsproject/blob/main/conf/base/globals.yml)ファイルを参照してください。)
+
 ``` 
 ファイルを削除する関数
 def int_deleate_file(~):
