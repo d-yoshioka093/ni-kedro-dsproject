@@ -16,7 +16,8 @@
 * [data engineering convention](https://kedro.readthedocs.io/en/stable/faq/faq.html#what-is-data-engineering-convention)に従い、結果が再現できることを確認
 * データをリポジトリにコミットしない
 * 認証情報やローカル設定をリポジトリにコミットせず、すべての認証情報とローカル設定を `conf/local/` に保存
-* 改善が必要な場合、必ずレビューの上でリポジトリにブランチをマージすること
+* リポジトリの内容を変更する場合はその作業のためのブランチを作成し、変更後に　`pull request` 　を行い、レビューが完了した後にそのブランチをマージすること
+　(詳細は[GitHub Flow 図解](https://qiita.com/tbpgr/items/4ff76ef35c4ff0ec8314)　を確認してください)
 
 ## How to install dependencies
 
