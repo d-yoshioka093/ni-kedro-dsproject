@@ -27,10 +27,11 @@
 conda create --name kedro-environment python=3.10
 ```
 
-`pip` をインストールする場合は `src/requirements.txt`で、~~`conda` をインストールする場合は `src/environment.yml`で~~、依存関係を宣言してください。
-`pip`インストール:
+必要なライブラリ群をインストールする際には、`./setup.sh`によって、requirements.txtで定義したライブラリ、pre-commitのインストールを実施し、
+依存関係を宣言してください。
+インストール:
 ```
-pip install -r src/requirements.txt
+./setup.sh
 ```
 
 ローカル環境で`spark`を実行するため、`spark`と`hadoop`の実行環境をローカルPCに構築する必要があります。構築のイメージは所定のWebページより、それぞれに必要な実行ファイル群をローカルPCに配置し、環境変数を追加してそれらの実行ファイルがWindows上で認識される必要があります。
