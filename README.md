@@ -7,6 +7,19 @@
 
 詳細情報、基本的なアーキテクチャーの情報については、[Kedroドキュメント](https://kedro.readthedocs.io)を参照してください。
 
+JDKをダウンロード
+https://www.oracle.com/java/technologies/downloads/
+```
+set JAVA_HOME=javaのインストールパス
+```
+システム環境変数にインストールしたJAVAのパスを追加
+（変数値例）C:\Program Files\Java\jdk-17.0.2
+
+```
+ERROR: Write access to repository not granted.
+```
+push実行時に上記エラーが発生した場合
+リポジトリの管理者に自身のアカウントに対して、collaboratorsとしての権限を付与してもらう
 
 ## Rules and guidelines
 

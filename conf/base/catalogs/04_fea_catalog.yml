@@ -1,0 +1,14 @@
+_csv: &csv
+  type: spark.SparkDataSet
+  file_format: csv
+  load_args:
+    sep: ','
+    header: True
+    inferSchema: False
+
+fea_result:
+  type: MemoryDataSet
+  # filepath: data/02_intermediate/result.parquet
+  #filepath: ${data_path}/${folders.fea}/fea_result.parquet
+  #save_args:
+  #  mode: overwrite

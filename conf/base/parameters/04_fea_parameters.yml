@@ -1,0 +1,5 @@
+fea_params:
+    bin_var: 'Fare'
+    vec_in: ['Age']
+
+#'Pclass_encoded','Sex_indexed_encoded','SibSp_encoded','Parch_encoded','Embarked_indexed_encoded','num_cols_scaled',

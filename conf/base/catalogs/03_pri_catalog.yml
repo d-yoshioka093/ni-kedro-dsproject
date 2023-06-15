@@ -1,0 +1,30 @@
+_csv: &csv
+  type: spark.SparkDataSet
+  file_format: csv
+  load_args:
+    sep: ','
+    header: True
+    inferSchema: False
+
+pri_prep:
+  type: MemoryDataSet
+  # filepath: data/02_intermediate/result.parquet
+  #filepath: ${data_path}/${folders.pri}/pri_prep.parquet
+  #save_args:
+  #  mode: overwrite
+
+pri_result:
+  type: MemoryDataSet
+  #type: pandas.CSVDataSet
+  # filepath: data/02_intermediate/result.parquet
+  #filepath: ${data_path}/${folders.fea}/pri_result.parquet
+  #filepath: ${data_path}/${folders.fea}/pri_result.csv
+  #save_args:
+  #  mode: overwrite
+
+fea_prep:
+  type: MemoryDataSet
+  # filepath: data/02_intermediate/result.parquet
+  #filepath: ${data_path}/${folders.fea}/fea_prep.parquet
+  #save_args:
+  #  mode: overwrite

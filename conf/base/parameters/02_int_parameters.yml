@@ -1,0 +1,4 @@
+int_params:
+    Replace_na: 'nodata'
+    fillna_var: 'Age'
+    type_var: {'Sex': 'Sex_indexed', 'Embarked': 'Embarked_indexed'}

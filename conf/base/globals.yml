@@ -10,3 +10,6 @@ folders:
     int: "02_intermediate"
     pri: "03_primary"
     fea: "04_feature"
+    mdi: "05_model_input"
+    mod: "06_models"
+    mdo: "07_model_output"
