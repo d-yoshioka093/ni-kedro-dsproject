@@ -26,10 +26,10 @@ _csv: &csv
     header: True
     inferSchema: False
 
-result2:
+int_result:
   type: spark.SparkDataSet
   # filepath: data/02_intermediate/result.parquet
-  filepath: ${data_path}/${folders.pri}/result2.parquet
+  filepath: ${data_path}/${folders.pri}/int_result.parquet
   save_args:
     mode: overwrite
 

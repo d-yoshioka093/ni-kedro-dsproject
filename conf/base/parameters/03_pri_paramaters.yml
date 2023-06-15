@@ -1,0 +1,4 @@
+pri_ohe_params:
+    ohe_input: ['Pclass', 'Sex_indexed', 'SibSp', 'Parch', 'Embarked_indexed']
+pri_std_params:    
+    std_input: ['Age','Fare']
